@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CarsSpot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@400&family=Roboto+Condensed:wght@400;700&family=Roboto+Flex:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/style.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+          theme: {
+            extend: {
+                zIndex: {
+                    '-1': '-1',
+                },
+                fontFamily: {
+                    robotoCondensed: ['"Roboto Condensed"', 'sans-serif'],
+                    bebasNeue: ['"Bebas Neue"', 'sans-serif'],
+                },
+                colors: {
+                    darkGray: '#282828',
+                    lightGray: '#F7F7F7',
+                    blue: '#0147FF',
+                },
+            }
+          }
+        }
+    </script>
+</head>
+<body class="max-w-[1440px] relative bg-[#F7F7F7] mx-[auto] my-[0]s">
+    <header class="header px-[0] py-[16px]">
+       <div class="container mx-[auto] my-[0] flex justify-between items-center">
+            <div>
+                <img src="./icons/logo.svg" alt="logo">
+            </div>
+            <nav class="nav flex gap-[24px]">
+                <a class="leading-[24px] text-darkGray" href="#gallery">Galeria zdjęć</a>
+                <a class="leading-[24px] text-darkGray" href="#seo">FaQ</a>
+            </nav>
+            <div class="btn_blue bg-blue text-lightGray flex items-center justify-center text-[15px] font-semibold leading-[22.5px] tracking-[-0.02em] text-center w-[158px] h-[47px] rounded-[8px] cursor-pointer">
+                <a href="tel:+480123456789">Zadzwoń do nas</a>
+            </div>
+            <div class="hamburger hidden">
+                <span class="hamburger-span"></span>
+                <span class="hamburger-span"></span>
+            </div>
+            <div class="nav_mobile hidden">
+                <div class="nav">
+                    <a class="link-mobile leading-[24px] text-darkGray" href="#gallery">Galeria zdjęć</a>
+                    <a class="link-mobile leading-[24px] text-darkGray" href="#seo">FaQ</a>
+                </div>
+                <div class="bg-blue text-lightGray flex items-center justify-center text-[15px] font-semibold leading-[22.5px] tracking-[-0.02em] text-center w-[158px] h-[47px] rounded-[8px] cursor-pointer">
+                    <a href="tel:+480123456789">Zadzwoń do nas</a>
+                </div>
+            </div>
+       </div>
+    </header>
+    <main class="main flex flex-col h-[825px] pt-[120px] bg-[url('../img/main_bg.png')] bg-no-repeat bg-[bottom_92px_right]">
+        <div class="container mx-[auto] my-[0]">
+            <h1 class="main_title font-bebasNeue text-[60.29px] md:text-[76.29px] font-normal leading-[58.92px] md:leading-[83.92px] tracking-[-0.04em] text-darkGray [@media(max-width:500px)]:text-[42px]">Sprzedajemy samochody <br>z Europy</h1>
+            <div class="main_subtitle mt-[32px] font- font-normal leading-[24px] text-darkGray">Kup komfortowy pojazd, aby każda podróż była <br>wyjątkowym przeżyciem.</div>
+            <div class="main_btn mt-[48px] flex gap-[24px]">
+                <div class="bg-blue text-lightGray flex items-center justify-center text-[15px] font-semibold leading-[22.5px] tracking-[-0.02em] text-center w-[158px] h-[47px] rounded-[8px] cursor-pointer">
+                    <a href="#gallery">Zobacz zdjęcia</a>
+                </div>
+                <div class="border-[1px] border-[solid] border-blue text-blue flex items-center justify-center text-[15px] font-semibold leading-[22.5px] tracking-[-0.02em] text-center w-[158px] h-[47px] rounded-[8px] cursor-pointer">
+                    <a href="tel:+480123456789">Zadzwoń do nas</a>
+                </div>
+            </div>
+            <div class="main_bg absolute top-[0] right-[32px] -z-1">
+                <img src="./icons/subtract.svg" alt="cars">
+            </div>
+        </div>
+    </main>
+    <section class="gallery ml-[0] mr-[0] my-[80px]" id="gallery">
+        <div class="container mx-[auto] my-[0]">
+            <div class="gallery_subtitle font-robotoCondensed text-[21.5px] font-normal leading-[32.25px] text-blue">Prezentacja firmy</div>
+            <h2 class="gallery_title font-bebasNeue text-[40px] font-normal leading-[48px] text-[#1D1D1B] [@media(max-width:500px)]:text-[36px]">Zobacz naszą Galerię zdjęć</h2>
+            <div class="gallery_switcher mt-[24px] flex gap-[48px]">
+                <div class="gallery_cars gallery_active font-semibold text-[15px] leading-[22.5px] tracking-[-0.02em] cursor-pointer [@media(max-width:500px)]:text-[12px]">Samochody osobowe</div>
+                <div class="gallery_cars font-semibold text-[15px] leading-[22.5px] tracking-[-0.02em] cursor-pointer [@media(max-width:500px)]:text-[12px]">Samochody dostawcze</div>
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/car_1.png" alt="Car-1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_2.png" alt="Car-2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_3.png" alt="Car-3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_1.png" alt="Car-1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_2.png" alt="Car-2">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <div class="swiper mySwiper hidden">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./img/car_3.png" alt="Car-1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_1.png" alt="Car-2">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_2.png" alt="Car-3">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_1.png" alt="Car-1">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./img/car_2.png" alt="Car-2">
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+    <section class="seo bg-darkGray px-[0] py-[88px] text-white" id="seo">
+        <div class="container mx-[auto] my-[0] flex gap-[48px]">
+            <div class="seo_content w-full md:w-1/2">
+                <h2 class="seo_title font-bebasNeue text-[25px] font-normal leading-[37.5px] tracking-[-0.03em]">Id nostrud enim esse consectetur in eu mollit fugiat aute. Velit nulla commodo.</h2>
+                <div class="seo_descr ml-[0] mr-[0] my-[16px] font-robotoCondensed text-[14px] font-normal leading-[21px]">Mauris varius ipsum mauris, rutrum lobortis magna efficitur a. Donec egestas, nisl vehicula feugiat ornare, diam turpis efficitur mi, ac venenatis eros ipsum ac arcu. Vestibulum et  [...]</div>
+                <div class="seo_btn flex justify-center items-center gap-[6px] w-[fit-content] w-[58.73px] h-[27px] cursor-pointer">
+                    <span class="font-robotoCondensed text-[14px] font-normal leading-[21px]">Rozwiń</span>
+                    <div>
+                        <img src="./icons/arrow.svg" alt="arrow">
+                    </div>
+                </div>
+            </div>
+            <div class="seo_content w-full md:w-1/2">
+                <h2 class="seo_title font-bebasNeue text-[25px] font-normal leading-[37.5px] tracking-[-0.03em]">Id nostrud enim esse consectetur in eu mollit fugiat aute. Velit nulla commodo.</h2>
+                <div class="seo_descr ml-[0] mr-[0] my-[16px] font-robotoCondensed text-[14px] font-normal leading-[21px]">Mauris varius ipsum mauris, rutrum lobortis magna efficitur a. Donec egestas, nisl vehicula feugiat ornare, diam turpis efficitur mi, ac venenatis eros ipsum ac arcu. Vestibulum et  [...]</div>
+                <div class="seo_btn flex justify-center items-center gap-[6px] w-[fit-content] w-[58.73px] h-[27px] cursor-pointer">
+                    <span class="font-robotoCondensed text-[14px] font-normal leading-[21px]">Rozwiń</span>
+                    <div>
+                        <img src="./icons/arrow.svg" alt="arrow">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer bg-darkGray px-[0] py-[24px] text-white font-robotoCondensed font-bold leading-[24px]">
+        <div class="container mx-[auto] my-[0] flex justify-between">
+            <div class="footer_text font-robotoCondensed font-bold leading-[24px]">Cars Spot</div>
+            <a href="#" class="footer_privacy font-robotoCondensed font-bold leading-[24px] cursor-pointer underline">Polityka prywatności</a>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script>
+        let swiper = new Swiper(".mySwiper", {
+          slidesPerView: "auto",
+          centeredSlides: false,
+          spaceBetween: 30,
+          pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+          },
+        });
+    </script>
+    <script src="./script.js"></script>
+</body>
+</html>
